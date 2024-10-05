@@ -3,7 +3,7 @@ import Image from "./Image/Image";
 
 const Card = ({ source }) => {
   return (
-    <div className="cursor-pointer shadow-lg flex flex-col items-center w-11/12 rounded-md p-5">
+    <div className="cursor-pointer shadow-lg flex flex-col items-center w-11/12 rounded-md p-7 bg-white">
       <Image source={source} />
 
       <div className="flex flex-col justify-between">

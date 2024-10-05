@@ -16,8 +16,8 @@ const CardsContainer = () => {
   ];
 
   return (
-    <div className="flex-grow">
-      <div className="grid grid-cols-4 mt-40 w-11/12 m-auto gap-9">
+    <div className="flex-grow bg-gray-50">
+      <div className="grid grid-cols-4 mt-40 w-11/12 m-auto gap-9 ">
         {images.map((element, index) => {
           return <Card key={index} source={element} />;
         })}
