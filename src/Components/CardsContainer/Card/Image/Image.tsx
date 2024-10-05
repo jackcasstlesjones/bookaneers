@@ -1,5 +1,5 @@
 const Image = ({ source }) => {
-  return <img src={source} alt="" />;
+  return <img className="w-44" src={source} alt="" />;
 };
 
 export default Image;
