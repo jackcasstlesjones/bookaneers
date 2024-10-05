@@ -8,7 +8,7 @@ const CardsContainer = () => {
 
   return (
     <div className="flex-grow">
-      <div className="grid grid-cols-4 mt-40 w-3/4 m-auto">
+      <div className="grid grid-cols-4 mt-40 w-11/12 m-auto">
         {images.map((element, index) => {
           return <Card key={index} source={element} />;
         })}
