@@ -1,26 +1,28 @@
+import { useEffect, useState } from "react";
 import Card from "./Card/Card";
 
-import smallGods from "../../assets/small-gods.jpg";
-import betweenTwoFires from "../../assets/between-two-fires.jpg";
-import hailProjectMary from "../../assets/hail-project-mary.jpg";
-import hiddenPictures from "../../assets/hidden-pictures.jpg";
-import dune from "../../assets/dune.jpg";
+const images = import.meta.glob("../../assets/*.jpg"); // Adjust the glob pattern if necessary
 
 const CardsContainer = () => {
-  const images: string[] = [
-    smallGods,
-    betweenTwoFires,
-    hailProjectMary,
-    hiddenPictures,
-    dune,
-  ];
+  const imagePaths = Object.keys(images).map((key) => {
+    return images[key](); // This returns a promise
+  });
+
+  // Since imagePaths is an array of promises, we can use Promise.all to resolve them
+  const [resolvedImages, setResolvedImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    Promise.all(imagePaths).then((resolved) => {
+      setResolvedImages(resolved.map((img) => img.default)); // Access the default export
+    });
+  }, []);
 
   return (
     <div className="flex-grow bg-gray-50">
       <div className="grid grid-cols-4 mt-40 w-11/12 m-auto gap-9 ">
-        {images.map((element, index) => {
-          return <Card key={index} source={element} />;
-        })}
+        {resolvedImages.map((element, index) => (
+          <Card key={index} source={element} />
+        ))}
       </div>
     </div>
   );
