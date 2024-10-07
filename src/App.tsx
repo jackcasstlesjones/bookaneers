@@ -6,8 +6,6 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import CardsContainer from "./Components/CardsContainer/CardsContainer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="flex">
