@@ -7,7 +7,7 @@ import hiddenPictures from "../../assets/hidden-pictures.jpg";
 import dune from "../../assets/dune.jpg";
 
 const CardsContainer = () => {
-  const images = [
+  const images: string[] = [
     smallGods,
     betweenTwoFires,
     hailProjectMary,

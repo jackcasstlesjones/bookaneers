@@ -1,7 +1,11 @@
 import Text from "./Text/Text";
 import Image from "./Image/Image";
 
-const Card = ({ source }) => {
+interface CardProps {
+  source: string;
+}
+
+const Card = ({ source }: CardProps) => {
   return (
     <div className="cursor-pointer shadow-lg flex flex-col items-center w-11/12 rounded-md p-7 bg-white">
       <Image source={source} />
