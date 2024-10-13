@@ -8,9 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "database": "DB_FILE=db.sqlite node ./src/database/db.js"
   },
   "dependencies": {
+    "better-sqlite3": "^11.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
